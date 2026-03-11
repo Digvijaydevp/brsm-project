@@ -1,0 +1,290 @@
+======================================================================
+  SENTENCE MEMORABILITY — ANALYSIS (REPORT VERSION)
+  Phase 1: Data Loading & Preparation     (Member 1)
+  Phase 2: Descriptive Stats & Plots       (Member 2)
+  Phase 3: Inferential Statistics           (Member 3)
+======================================================================
+======================================================================
+PHASE 1: DATA LOADING & PREPARATION
+======================================================================
+  Found 114 log files
+  Total rows loaded: 81329
+  Excluded 5269 practice rows -> 76060 main rows
+  Validation: 329/342 blocks passed (13 excluded)
+  Rows after block exclusion: 72844
+
+  ── Trial-Level Data (target repeats) ──
+  Sentence presentations: 5264
+  Hits (IR pressed): 4384
+  Misses (no response): 880
+  Overall Hit Rate: 0.8328
+  Hits with WR data: 4384 (100.0%)
+
+  ── False Alarm Rate ──
+  Total false alarm events: 1875
+  Total lure presentations: 19082
+  Overall FA Rate: 0.0983
+  Per-participant FA Rate: mean=0.0997, median=0.0805, SD=0.0655
+  Range: 0.0000 to 0.2759
+
+  Unique participants in valid data: 112
+  Target repeat trials: 5264
+  Hits (IR correct, for RT & WR): 4384
+  False alarm events: 1875
+
+  ── Per-Sentence IR Memorability Scores ──
+  Unique sentences: 392
+  Mean IR Memorability: 0.8349
+  Median: 0.8462
+  SD: 0.1119
+  Range: 0.4667 to 1.0000
+
+  ── Per-Sentence WR Accuracy ──
+  Unique sentences with WR: 392
+  Mean WR Accuracy: 0.7571
+
+======================================================================
+PHASE 2: DESCRIPTIVE STATISTICS & VISUALIZATIONS
+======================================================================
+
+── 2A. Per-Sentence IR Memorability Score ──
+  N sentences: 392
+  Mean: 0.8349
+  Median: 0.8462
+  Std Dev: 0.1119
+  Skewness: -0.6451
+  Kurtosis: 0.3369
+  Min: 0.4667,  Max: 1.0000
+
+By Condition:
+           N_sentences    Mean  Median      SD
+Condition                                     
+HH                  98  0.8532  0.8571  0.0973
+HL                  98  0.8499  0.8708  0.1057
+LH                  98  0.8397  0.8462  0.1007
+LL                  98  0.7967  0.8153  0.1328
+
+── 2A. Per-Sentence WR Accuracy ──
+  N sentences: 392
+  Mean: 0.7571
+  Median: 0.7633
+  Std Dev: 0.1447
+  Skewness: -0.4630
+  Kurtosis: 0.5010
+  Min: 0.1667,  Max: 1.0000
+
+── 2B. Overall Summary ──
+  N trials: 5264
+  Mean Hit Rate: 0.8328
+  SD: 0.3732
+
+── 2C. IR Accuracy (Hit Rate) by Condition ──
+           N_ppts  MeanHitRate  MedianHitRate      SD
+Condition                                            
+HH            112       0.8486         0.9167  0.1674
+HL            112       0.8504         0.9167  0.1685
+LH            112       0.8385         0.9167  0.1723
+LL            112       0.7913         0.8333  0.1886
+
+── 95% CI for Hit Rate by Condition ──
+  Condition      N       Mean         SE   95% CI Lower   95% CI Upper
+  -----------------------------------------------------------------
+  HH           112     0.8486     0.0158         0.8172         0.8799
+  HL           112     0.8504     0.0159         0.8189         0.8820
+  LH           112     0.8385     0.0163         0.8063         0.8708
+  LL           112     0.7913     0.0178         0.7560         0.8266
+
+── 2D. Corrected IR by Condition ──
+           N_ppts  MeanCorrIR  MedianCorrIR      SD
+Condition                                          
+HH            112      0.7489        0.7917  0.1702
+HL            112      0.7507        0.7787  0.1651
+LH            112      0.7388        0.7730  0.1742
+LL            112      0.6916        0.7227  0.1806
+
+── 2E. IR Accuracy by Voice ──
+       count    mean     std
+Voice                       
+A        112  0.8279  0.1528
+P        112  0.8365  0.1647
+
+── 2F. IR Accuracy by Block ──
+       count    mean     std
+Block                       
+1        108  0.8576  0.1377
+2        109  0.8326  0.1832
+3        112  0.8092  0.1855
+
+── 2G. WR Accuracy by Condition ──
+           N_ppts  MeanWR  MedianWR      SD
+Condition                                  
+HH            112  0.7482      0.75  0.1508
+HL            112  0.7466      0.75  0.1449
+LH            112  0.7620      0.75  0.1604
+LL            112  0.7303      0.75  0.1729
+
+── 95% CI for WR Accuracy by Condition ──
+  HH: Mean=0.7482, 95% CI [0.7200, 0.7765]
+  HL: Mean=0.7466, 95% CI [0.7195, 0.7737]
+  LH: Mean=0.7620, 95% CI [0.7320, 0.7920]
+  LL: Mean=0.7303, 95% CI [0.6980, 0.7627]
+
+── 2H. 2×2 Factorial: SubjectMem × ObjectMem (Hit Rate) ──
+                      count    mean     std
+SubjectMem ObjectMem                       
+H          H            112  0.8486  0.1674
+           L            112  0.8504  0.1685
+L          H            112  0.8385  0.1723
+           L            112  0.7913  0.1886
+
+  Marginal by SubjectMem:
+SubjectMem
+H    0.8495
+L    0.8149
+
+  Marginal by ObjectMem:
+ObjectMem
+H    0.8436
+L    0.8209
+
+── 2I. Reaction Time IR (hits only) ──
+  N: 4384, Mean: 1712.66, Median: 1588.00, SD: 621.52
+
+── 2J. Pearson Correlations ──
+  HitRate vs WR_Accuracy: r = 0.3392, p = 2.5320e-04 (N=112)
+  HitRate vs MeanRT_IR: r = -0.1988, p = 3.5586e-02 (N=112)
+
+── 2K. Assumption Checking ──
+  |skewness| < 2 and |kurtosis| < 7 → approximate normality
+
+  DV               Cond       N     Skew     Kurt   ~Normal?
+  ------------------------------------------------------------
+  Hit Rate         HH       112  -1.2957   1.2112        Yes
+  Hit Rate         HL       112  -1.4502   2.0095        Yes
+  Hit Rate         LH       112  -1.7731   4.2883        Yes
+  Hit Rate         LL       112  -1.2753   2.0225        Yes
+  WR Accuracy      HH       112  -0.3178  -0.3471        Yes
+  WR Accuracy      HL       112  -0.5910   0.1970        Yes
+  WR Accuracy      LH       112  -1.1769   3.7794        Yes
+  WR Accuracy      LL       112  -0.9982   2.1773        Yes
+
+  Variance ratios (max/min < 4 → reasonable homogeneity):
+  Hit Rate: ratio = 1.27 -> OK
+  WR Accuracy: ratio = 1.42 -> OK
+
+── Generating 11 Report Plots ──
+  -> Saved figures/Plot04_IR_ACC_Violin.png
+  -> Saved figures/Plot06_IR_ACC_Violin_Voice.png
+  -> Saved figures/Plot07_IR_ACC_Boxplot_Block.png
+  -> Saved figures/Plot12_Heatmap_2x2.png
+  -> Saved figures/Plot16_WR_Accuracy_Violin.png
+  -> Saved figures/Plot21_IR_vs_WR_Scatter.png
+  -> Saved figures/Plot23_IR_Memorability_Histogram.png
+  -> Saved figures/Plot24_WR_Accuracy_Histogram.png
+  -> Saved figures/Plot31_CorrectedIR_Boxplot.png
+  -> Saved figures/Plot35_Block_Trend.png
+  -> Saved figures/Plot36_Correlation_Heatmap.png
+
+======================================================================
+PHASE 3: INFERENTIAL STATISTICS
+======================================================================
+
+── 3A. Kruskal-Wallis H Tests (4 conditions) ──
+  Hit Rate         H(3) = 10.9273, p = 1.2126e-02, eta2 = 0.0179
+                   *** SIGNIFICANT ***
+  WR Accuracy      H(3) = 1.9812, p = 5.7631e-01, eta2 = -0.0023
+                   Not significant
+
+  KW across Blocks (Hit Rate):
+  Hit Rate by Block: H = 2.6365, p = 2.6761e-01
+
+  KW — RT_IR by Condition:
+  RT_IR            H(3) = 2.1016, p = 5.5158e-01, eta2 = -0.0020
+
+── 3B. Chi-Square Tests ──
+  IR by Condition: chi2(3) = 22.7265, p = 4.6045e-05 ***
+  IR by Voice:     chi2(1) = 0.7218, p = 3.9555e-01 
+  WR by Condition: chi2(3) = 4.8401, p = 1.8389e-01 
+  WR by Voice:     chi2(1) = 1.9869, p = 1.5867e-01 
+
+── 3C. Paired t-Tests — Voice Effect ──
+  Voice -> Hit Rate: t(111) = -0.9052, p = 3.6730e-01, Cohen's d = -0.0855
+    Not significant
+  Voice -> WR Accuracy: t(111) = 1.7510, p = 8.2700e-02, Cohen's d = 0.1655
+    Not significant
+  Voice -> RT_IR: t(111) = -3.7668, p = 2.6642e-04, Cohen's d = -0.3559
+    *** SIGNIFICANT ***
+
+── 3C. Paired t-Tests — Subject Memorability (H vs L) ──
+  SubjectMem -> Hit Rate: t(111) = 3.9290, p = 1.4863e-04, Cohen's d = 0.3713
+    *** SIGNIFICANT ***
+  SubjectMem -> WR Accuracy: t(111) = 0.1483, p = 8.8240e-01, Cohen's d = 0.0140
+    Not significant
+  SubjectMem -> RT_IR: t(111) = 0.1261, p = 8.9991e-01, Cohen's d = 0.0119
+    Not significant
+
+── 3C. Paired t-Tests — Object Memorability (H vs L) ──
+  ObjectMem -> Hit Rate: t(111) = 2.1177, p = 3.6429e-02, Cohen's d = 0.2001
+    *** SIGNIFICANT ***
+  ObjectMem -> WR Accuracy: t(111) = 1.2964, p = 1.9753e-01, Cohen's d = 0.1225
+    Not significant
+  ObjectMem -> RT_IR: t(111) = -2.4118, p = 1.7512e-02, Cohen's d = -0.2279
+    *** SIGNIFICANT ***
+
+── 3D. Block Pairwise t-Tests (Hit Rate) ──
+  Block 1 vs 2: t(104) = 1.3725, p = 1.7287e-01, d = 0.1339
+  Block 1 vs 3: t(104) = 3.1535, p = 2.1091e-03, d = 0.3077
+  Block 2 vs 3: t(104) = 1.8512, p = 6.6980e-02, d = 0.1807
+
+  Pair                   raw p   Bonferroni         Holm
+  -------------------------------------------------------
+  Blk1 vs Blk2      1.7287e-01   5.1862e-01   1.7287e-01
+  Blk1 vs Blk3      2.1091e-03   6.3272e-03   6.3272e-03 *Bonf *Holm
+  Blk2 vs Blk3      6.6980e-02   2.0094e-01   1.3396e-01
+
+── 3E. Post-Hoc Pairwise t-Tests (Conditions) ──
+
+  Pairwise Paired t-Tests: Hit Rate
+
+  Pair                t        raw p   Bonferroni         Holm       BH-FDR  Cohen d
+  ----------------------------------------------------------------------------------
+  HH-HL       -0.1403   8.8868e-01   1.0000e+00   9.8912e-01   8.8868e-01  -0.0111
+  HH-LH        0.8262   4.1048e-01   1.0000e+00   9.8912e-01   4.9257e-01   0.0591
+  HH-LL        3.7224   3.1158e-04   1.8695e-03   1.5579e-03   9.3475e-04   0.3212 *Bonf *Holm *BH
+  HL-LH        0.9790   3.2971e-01   1.0000e+00   9.8912e-01   4.9257e-01   0.0699
+  HL-LL        4.5183   1.5644e-05   9.3864e-05   9.3864e-05   9.3864e-05   0.3307 *Bonf *Holm *BH
+  LH-LL        3.2000   1.7919e-03   1.0751e-02   7.1674e-03   3.5837e-03   0.2615 *Bonf *Holm *BH
+
+  Pairwise Paired t-Tests: WR Accuracy
+
+  Pair                t        raw p   Bonferroni         Holm       BH-FDR  Cohen d
+  ----------------------------------------------------------------------------------
+  HH-HL        0.0873   9.3059e-01   1.0000e+00   1.0000e+00   9.3059e-01   0.0112
+  HH-LH       -0.7961   4.2765e-01   1.0000e+00   1.0000e+00   5.1318e-01  -0.0883
+  HH-LL        0.9133   3.6305e-01   1.0000e+00   1.0000e+00   5.1318e-01   0.1104
+  HL-LH       -0.8732   3.8443e-01   1.0000e+00   1.0000e+00   5.1318e-01  -0.1008
+  HL-LL        0.9263   3.5630e-01   1.0000e+00   1.0000e+00   5.1318e-01   0.1019
+  LH-LL        1.5776   1.1750e-01   7.0498e-01   7.0498e-01   5.1318e-01   0.1899
+
+── 3F. Permutation Test (Hit Rate by Condition) ──
+  Observed variance of condition means: 0.000579
+  Permutation p-value (5000 permutations): 0.0002
+  *** SIGNIFICANT ***
+
+── 3G. Block × Condition: Kruskal-Wallis per Block ──
+
+  Hit Rate:
+    Block 1: H = 10.1181, p = 1.7589e-02 ***
+    Block 2: H = 3.8579, p = 2.7723e-01 
+    Block 3: H = 5.0208, p = 1.7028e-01 
+
+  WR Accuracy:
+    Block 1: H = 2.4696, p = 4.8081e-01 
+    Block 2: H = 7.5510, p = 5.6263e-02 
+    Block 3: H = 6.1537, p = 1.0437e-01 
+
+── 3H. Participant / Block Exclusion Summary ──
+  Total blocks: 342
+  Passed validation: 329 (96.2%)
+  Failed validation: 13 (3.8%)
+  Participants retained: 112

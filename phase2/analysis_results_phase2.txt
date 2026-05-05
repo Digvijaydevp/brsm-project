@@ -1,0 +1,376 @@
+======================================================================
+  SENTENCE MEMORABILITY — PHASE 2: ADVANCED ANALYSIS
+  Block 1: Repeated-Measures ANOVA
+  Block 2: GLMMs / LMMs
+  Block 3: Regression
+  Block 4: Signal Detection (d′)
+======================================================================
+
+Loading data via Phase 1 pipeline...
+
+  Data loaded: 5264 trials, 112 participants, 392 sentences
+
+======================================================================
+BLOCK 1: REPEATED-MEASURES ANOVA
+======================================================================
+  Note: pingouin supports max 2 within-factors, so the 2×2×2 design
+  is decomposed into three separate 2×2 RM-ANOVAs per DV.
+
+── 1A. RM-ANOVAs: IR Accuracy (Hit Rate) ──
+
+  IR Accuracy: SubjectMem × ObjectMem (N=112 participants)
+                Source       SS  ddof1  ddof2       MS         F    p_unc  p_GG_corr      np2  eps
+            SubjectMem 0.134068      1    111 0.134068 15.436944 0.000149   0.000149 0.122092  1.0
+             ObjectMem 0.057679      1    111 0.057679  4.484836 0.036429   0.036429 0.038835  1.0
+SubjectMem * ObjectMem 0.067522      1    111 0.067522  7.346928 0.007785   0.007785 0.062080  1.0
+
+  IR Accuracy: SubjectMem × Voice (N=112 participants)
+            Source           SS  ddof1  ddof2           MS            F    p_unc  p_GG_corr          np2  eps
+        SubjectMem 1.340681e-01      1    111 1.340681e-01 1.543694e+01 0.000149   0.000149 1.220920e-01  1.0
+             Voice 8.200025e-03      1    111 8.200025e-03 8.194683e-01 0.367296   0.367296 7.328494e-03  1.0
+SubjectMem * Voice 5.221518e-16      1    111 5.221518e-16 5.741065e-14 1.000000   1.000000 5.172131e-16  1.0
+
+  IR Accuracy: ObjectMem × Voice (N=112 participants)
+           Source            SS  ddof1  ddof2            MS             F    p_unc  p_GG_corr           np2  eps
+        ObjectMem  5.767919e-02      1    111  5.767919e-02  4.484836e+00 0.036429   0.036429  3.883485e-02  1.0
+            Voice  8.200025e-03      1    111  8.200025e-03  8.194683e-01 0.367296   0.367296  7.328494e-03  1.0
+ObjectMem * Voice -1.717376e-16      1    111 -1.717376e-16 -1.341505e-14 1.000000   1.000000 -1.208563e-16  1.0
+
+── 1B. RM-ANOVAs: WR Accuracy ──
+
+  WR Accuracy: SubjectMem × ObjectMem (N=109 participants)
+                Source       SS  ddof1  ddof2       MS        F    p_unc  p_GG_corr      np2  eps
+            SubjectMem 0.000994      1    108 0.000994 0.076545 0.782564   0.782564 0.000708  1.0
+             ObjectMem 0.028499      1    108 0.028499 1.260277 0.264088   0.264088 0.011535  1.0
+SubjectMem * ObjectMem 0.048006      1    108 0.048006 3.209556 0.076010   0.076010 0.028860  1.0
+
+  WR Accuracy: SubjectMem × Voice (N=109 participants)
+            Source       SS  ddof1  ddof2       MS        F    p_unc  p_GG_corr      np2  eps
+        SubjectMem 0.000994      1    108 0.000994 0.076545 0.782564   0.782564 0.000708  1.0
+             Voice 0.045589      1    108 0.045589 3.155551 0.078485   0.078485 0.028389  1.0
+SubjectMem * Voice 0.006056      1    108 0.006056 0.296275 0.587349   0.587349 0.002736  1.0
+
+  WR Accuracy: ObjectMem × Voice (N=109 participants)
+           Source       SS  ddof1  ddof2       MS        F    p_unc  p_GG_corr      np2  eps
+        ObjectMem 0.028499      1    108 0.028499 1.260277 0.264088   0.264088 0.011535  1.0
+            Voice 0.045589      1    108 0.045589 3.155551 0.078485   0.078485 0.028389  1.0
+ObjectMem * Voice 0.041917      1    108 0.041917 2.164071 0.144178   0.144178 0.019644  1.0
+
+── 1C. RM-ANOVAs: Reaction Time (RT_IR) ──
+
+  RT_IR: SubjectMem × ObjectMem (N=109 participants)
+                Source            SS  ddof1  ddof2            MS        F    p_unc  p_GG_corr      np2  eps
+            SubjectMem   8698.982225      1    108   8698.982225 0.137135 0.711871   0.711871 0.001268  1.0
+             ObjectMem 266854.546445      1    108 266854.546445 7.843109 0.006046   0.006046 0.067705  1.0
+SubjectMem * ObjectMem  78505.390482      1    108  78505.390482 2.078881 0.152243   0.152243 0.018885  1.0
+
+  RT_IR: SubjectMem × Voice (N=109 participants)
+            Source            SS  ddof1  ddof2            MS        F    p_unc  p_GG_corr      np2  eps
+        SubjectMem   8698.982225      1    108   8698.982225 0.137135 0.711871   0.711871 0.001268  1.0
+             Voice 375721.103211      1    108 375721.103211 8.558000 0.004194   0.004194 0.073423  1.0
+SubjectMem * Voice  40304.733945      1    108  40304.733945 1.208363 0.274101   0.274101 0.011065  1.0
+
+  RT_IR: ObjectMem × Voice (N=109 participants)
+           Source            SS  ddof1  ddof2            MS        F    p_unc  p_GG_corr      np2  eps
+        ObjectMem 266854.546445      1    108 266854.546445 7.843109 0.006046   0.006046 0.067705  1.0
+            Voice 375721.103211      1    108 375721.103211 8.558000 0.004194   0.004194 0.073423  1.0
+ObjectMem * Voice 145726.699541      1    108 145726.699541 3.474201 0.065049   0.065049 0.031166  1.0
+
+── 1D. One-Way RM-ANOVA: Hit Rate ~ Block ──
+  Participants with all 3 blocks: 105
+
+Source  ddof1  ddof2        F    p_unc      np2      eps
+ Block      2    208 5.148082 0.006573 0.047166 0.999023
+
+  Post-hoc (Bonferroni):
+Contrast A B  Paired  Parametric        T   dof alternative    p_unc   p_corr p_adjust   BF10   hedges
+   Block 1 2    True        True 1.372459 104.0   two-sided 0.172873 0.518620     bonf  0.269 0.122331
+   Block 1 3    True        True 3.153483 104.0   two-sided 0.002109 0.006327     bonf 11.107 0.284700
+   Block 2 3    True        True 1.851188 104.0   two-sided 0.066980 0.200940     bonf  0.559 0.145852
+
+  Generating RM-ANOVA interaction plots...
+  -> Saved figures/Plot_RMANOVA_Interaction.png
+  -> Saved figures/Plot_RMANOVA_Voice_Interaction.png
+
+======================================================================
+BLOCK 2: GENERALIZED LINEAR MIXED MODELS / LMMs
+======================================================================
+
+── 2A. Linear Mixed Model: IR Accuracy (binary) ──
+  Using linear probability model (LPM) with random intercepts
+
+         Mixed Linear Model Regression Results
+========================================================
+Model:            MixedLM Dependent Variable: IR_Hit    
+No. Observations: 5264    Method:             REML      
+No. Groups:       112     Scale:              0.1190    
+Min. group size:  32      Log-Likelihood:     -2015.6117
+Max. group size:  48      Converged:          No        
+Mean group size:  47.0                                  
+--------------------------------------------------------
+              Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+--------------------------------------------------------
+Intercept      0.832    0.015 57.035 0.000  0.804  0.861
+SubjectMem_c   0.035    0.010  3.676 0.000  0.016  0.054
+ObjectMem_c    0.024    0.010  2.557 0.011  0.006  0.043
+Voice_c       -0.009    0.010 -0.959 0.338 -0.028  0.010
+Block_c       -0.022    0.006 -3.816 0.000 -0.034 -0.011
+SubjObj       -0.049    0.019 -2.557 0.011 -0.086 -0.011
+SubjVoice     -0.003    0.019 -0.160 0.873 -0.040  0.034
+ObjVoice      -0.003    0.019 -0.160 0.873 -0.040  0.034
+Group Var      0.021    0.010                           
+========================================================
+
+
+── 2B. Linear Mixed Model: WR Accuracy ──
+
+         Mixed Linear Model Regression Results
+========================================================
+Model:            MixedLM Dependent Variable: WR        
+No. Observations: 4384    Method:             REML      
+No. Groups:       112     Scale:              0.1805    
+Min. group size:  9       Log-Likelihood:     -2526.3858
+Max. group size:  48      Converged:          Yes       
+Mean group size:  39.1                                  
+--------------------------------------------------------
+              Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+--------------------------------------------------------
+Intercept      0.752    0.009 83.768 0.000  0.734  0.770
+SubjectMem_c   0.002    0.013  0.161 0.872 -0.023  0.027
+ObjectMem_c    0.021    0.013  1.647 0.100 -0.004  0.046
+Voice_c        0.019    0.013  1.440 0.150 -0.007  0.044
+Block_c        0.001    0.008  0.166 0.868 -0.014  0.017
+SubjObj       -0.037    0.026 -1.434 0.152 -0.087  0.014
+SubjVoice      0.008    0.026  0.327 0.743 -0.042  0.059
+ObjVoice      -0.041    0.026 -1.585 0.113 -0.091  0.010
+Group Var      0.004    0.003                           
+========================================================
+
+
+── 2C. Linear Mixed Model: log(RT_IR) ──
+
+         Mixed Linear Model Regression Results
+========================================================
+Model:            MixedLM Dependent Variable: logRT     
+No. Observations: 4384    Method:             REML      
+No. Groups:       112     Scale:              0.0904    
+Min. group size:  9       Log-Likelihood:     -1121.5686
+Max. group size:  48      Converged:          Yes       
+Mean group size:  39.1                                  
+--------------------------------------------------------
+             Coef.  Std.Err.    z    P>|z| [0.025 0.975]
+--------------------------------------------------------
+Intercept     7.390    0.017 441.601 0.000  7.357  7.422
+SubjectMem_c  0.004    0.009   0.423 0.672 -0.014  0.022
+ObjectMem_c  -0.024    0.009  -2.663 0.008 -0.042 -0.006
+Voice_c      -0.051    0.009  -5.561 0.000 -0.068 -0.033
+Block_c       0.001    0.006   0.226 0.821 -0.010  0.012
+SubjObj       0.067    0.018   3.666 0.000  0.031  0.102
+SubjVoice    -0.039    0.018  -2.137 0.033 -0.075 -0.003
+ObjVoice      0.037    0.018   2.015 0.044  0.001  0.072
+Group Var     0.029    0.014                            
+========================================================
+
+
+── GLMM/LMM Summary of Fixed Effects ──
+  (Positive coefficient = higher value for H/Active/later block)
+  SubjectMem_c: +0.5 = High, -0.5 = Low
+  ObjectMem_c:  +0.5 = High, -0.5 = Low
+  Voice_c:      +0.5 = Active, -0.5 = Passive
+
+======================================================================
+BLOCK 3: REGRESSION — PREDICTING MEMORABILITY
+======================================================================
+
+── 3A. OLS Regression: IR Memorability ~ SubjectMem + ObjectMem + Voice ──
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        IR_Memorability   R-squared:                       0.034
+Model:                            OLS   Adj. R-squared:                  0.026
+Method:                 Least Squares   F-statistic:                     4.541
+Date:                Thu, 23 Apr 2026   Prob (F-statistic):            0.00383
+Time:                        12:30:18   Log-Likelihood:                 309.66
+No. Observations:                 392   AIC:                            -611.3
+Df Residuals:                     388   BIC:                            -595.4
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          0.8102      0.011     72.657      0.000       0.788       0.832
+SubjectMem_num     0.0334      0.011      2.992      0.003       0.011       0.055
+ObjectMem_num      0.0231      0.011      2.068      0.039       0.001       0.045
+Voice_num         -0.0070      0.011     -0.629      0.530      -0.029       0.015
+==============================================================================
+Omnibus:                       17.859   Durbin-Watson:                   1.980
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               19.093
+Skew:                          -0.533   Prob(JB):                     7.14e-05
+Kurtosis:                       3.182   Cond. No.                         3.73
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+── 3B. OLS Regression: WR Memorability ~ SubjectMem + ObjectMem + Voice ──
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        WR_Memorability   R-squared:                       0.010
+Model:                            OLS   Adj. R-squared:                  0.002
+Method:                 Least Squares   F-statistic:                     1.281
+Date:                Thu, 23 Apr 2026   Prob (F-statistic):              0.280
+Time:                        12:30:18   Log-Likelihood:                 203.86
+No. Observations:                 392   AIC:                            -399.7
+Df Residuals:                     388   BIC:                            -383.8
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          0.7360      0.015     50.390      0.000       0.707       0.765
+SubjectMem_num     0.0019      0.015      0.127      0.899      -0.027       0.031
+ObjectMem_num      0.0199      0.015      1.362      0.174      -0.009       0.049
+Voice_num          0.0205      0.015      1.405      0.161      -0.008       0.049
+==============================================================================
+Omnibus:                       15.465   Durbin-Watson:                   1.888
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               16.436
+Skew:                          -0.449   Prob(JB):                     0.000270
+Kurtosis:                       3.447   Cond. No.                         3.73
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+── 3C. Full Regression: IR Memorability ~ All Predictors + Interactions ──
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        IR_Memorability   R-squared:                       0.042
+Model:                            OLS   Adj. R-squared:                  0.027
+Method:                 Least Squares   F-statistic:                     2.802
+Date:                Thu, 23 Apr 2026   Prob (F-statistic):             0.0111
+Time:                        12:30:18   Log-Likelihood:                 311.28
+No. Observations:                 392   AIC:                            -608.6
+Df Residuals:                     385   BIC:                            -580.8
+Df Model:                           6                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          0.7994      0.015     54.203      0.000       0.770       0.828
+SubjectMem_num     0.0546      0.019      2.828      0.005       0.017       0.093
+ObjectMem_num      0.0433      0.019      2.242      0.026       0.005       0.081
+Voice_num         -0.0052      0.019     -0.270      0.787      -0.043       0.033
+SubjObj_int       -0.0397      0.022     -1.780      0.076      -0.084       0.004
+SubjVoice_int     -0.0028      0.022     -0.126      0.900      -0.047       0.041
+ObjVoice_int      -0.0008      0.022     -0.035      0.972      -0.045       0.043
+==============================================================================
+Omnibus:                       16.537   Durbin-Watson:                   1.993
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               17.476
+Skew:                          -0.507   Prob(JB):                     0.000160
+Kurtosis:                       3.204   Cond. No.                         9.25
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+  Variance Inflation Factors (VIF):
+  Variable                  VIF
+  ------------------------------
+  SubjectMem_num           3.00
+  ObjectMem_num            3.00
+  Voice_num                3.00
+  SubjObj_int              3.00
+  SubjVoice_int            3.00
+  ObjVoice_int             3.00
+
+── 3D. Logistic Regression: IR_Hit ~ Predictors (Trial Level) ──
+
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:                 IR_Hit   No. Observations:                 5264
+Model:                          Logit   Df Residuals:                     5258
+Method:                           MLE   Df Model:                            5
+Date:                Thu, 23 Apr 2026   Pseudo R-squ.:                0.007928
+Time:                        12:30:18   Log-Likelihood:                -2357.2
+converged:                       True   LL-Null:                       -2376.0
+Covariance Type:            nonrobust   LLR p-value:                 4.390e-07
+================================================================================
+                   coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------
+Intercept        1.6224      0.037     43.304      0.000       1.549       1.696
+SubjectMem_c     0.2443      0.075      3.276      0.001       0.098       0.390
+ObjectMem_c      0.1628      0.075      2.183      0.029       0.017       0.309
+Voice_c         -0.0660      0.074     -0.890      0.374      -0.211       0.079
+Block_c         -0.1757      0.046     -3.855      0.000      -0.265      -0.086
+SubjObj         -0.3256      0.149     -2.183      0.029      -0.618      -0.033
+================================================================================
+
+  Odds Ratios (exp(β)):
+  Predictor                  OR   95% CI Lower   95% CI Upper
+  ------------------------------------------------------------
+  SubjectMem_c           1.2767         1.1031         1.4777
+  ObjectMem_c            1.1768         1.0168         1.3620
+  Voice_c                0.9361         0.8095         1.0826
+  Block_c                0.8389         0.7672         0.9172
+  SubjObj                0.7221         0.5390         0.9673
+
+  Classification Accuracy: 0.8328
+  Baseline (always predict majority class): 0.8328
+
+  Generating regression plots...
+  -> Saved figures/Plot_Regression_Diagnostics.png
+
+======================================================================
+BLOCK 4: SIGNAL DETECTION ANALYSIS (d′)
+======================================================================
+
+── 4A. d′ per Participant × Condition ──
+
+  Condition      N    Mean d′      SD d′   95% CI Lower   95% CI Upper
+  ----------------------------------------------------------------------
+  HH           112     2.5084     0.6534         2.3860         2.6307
+  HL           112     2.5151     0.6320         2.3967         2.6334
+  LH           112     2.4622     0.6729         2.3362         2.5882
+  LL           112     2.2874     0.6596         2.1639         2.4109
+
+  Overall mean d′: 2.4433 (SD=0.6590)
+
+  Condition      Mean c       SD c
+  -----------------------------------
+  HH             0.1209     0.3809
+  HL             0.1176     0.3894
+  LH             0.1440     0.3837
+  LL             0.2314     0.4163
+
+── 4B. RM-ANOVA: d′ ~ Condition ──
+  Participants with d′ for all 4 conditions: 112
+
+   Source  ddof1  ddof2        F    p_unc      np2      eps
+Condition      3    333 9.458631 0.000005 0.078522 0.941853
+
+  Post-hoc (Bonferroni):
+ Contrast  A  B  Paired  Parametric         T   dof alternative    p_unc   p_corr p_adjust     BF10    hedges
+Condition HH HL    True        True -0.138201 111.0   two-sided 0.890332 1.000000     bonf    0.106 -0.010399
+Condition HH LH    True        True  1.020815 111.0   two-sided 0.309562 1.000000     bonf    0.174  0.069325
+Condition HH LL    True        True  4.083126 111.0   two-sided 0.000084 0.000505     bonf  207.378  0.335346
+Condition HL LH    True        True  1.147002 111.0   two-sided 0.253847 1.000000     bonf    0.198  0.080675
+Condition HL LL    True        True  4.951257 111.0   two-sided 0.000003 0.000016     bonf 5294.594  0.351178
+Condition LH LL    True        True  3.285028 111.0   two-sided 0.001365 0.008189     bonf    16.03  0.261431
+
+── 4C. RM-ANOVA: Criterion c ~ Condition ──
+  Participants with c for all 4 conditions: 112
+
+   Source  ddof1  ddof2        F    p_unc      np2      eps
+Condition      3    333 9.458631 0.000005 0.078522 0.941853
+
+── 4D. d′ by Voice (Active vs Passive) ──
+  d′ Active:  M=2.4695, SD=0.6363
+  d′ Passive: M=2.5348, SD=0.6890
+  Paired t-test: t(111) = -1.5200, p = 1.3136e-01, d = -0.1436
+  Not significant
+
+  Generating d′ plots...
+  -> Saved figures/Plot_dprime_Analysis.png
+  -> Saved figures/Plot_dprime_Violin.png
